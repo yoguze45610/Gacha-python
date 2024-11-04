@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガチャ予算シミュレーター</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ガチャ予算シミュレーター</h1>
+        
+        <!-- 入力フォーム -->
+        <form id="inputForm">
+            <div id="inputFields">
+                <label for="costPerGacha">ガチャ1回の料金 (円)</label>
+                <input type="number" id="costPerGacha" name="costPerGacha" required>
+                
+                <label for="probability">1回でほしいキャラが出る確率 (%)</label>
+                <input type="number" id="probability" name="probability" required>
+
+                <label for="targetCount">ほしいキャラの数</label>
+                <input type="number" id="targetCount" name="targetCount" required>
+
+                <label for="targetProbability">目標とする確率 (%)</label>
+                <input type="number" id="targetProbability" name="targetProbability" required>
+            </div>
+            <button type="button" onclick="simulate()">予算を計算する</button>
+        </form>
+
+        <!-- 結果表示 -->
+        <div id="result"></div>
+    </div>
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
